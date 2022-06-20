@@ -15,17 +15,13 @@ public class challenge6 {
     }
 
     public static void main(String[] args){
-        int highScorePosition = calculateHighScore(1500);
-        displayHighScore("Tim",highScorePosition);
+        displayHighScore("Tim",calculateHighScore(1500));
 
-        highScorePosition = calculateHighScore(900);
-        displayHighScore("Shane",highScorePosition);
+        displayHighScore("Shane",calculateHighScore(900));
 
-        highScorePosition = calculateHighScore(400);
-        displayHighScore("Hardik",highScorePosition);
+        displayHighScore("Hardik",calculateHighScore(400));
 
-        highScorePosition = calculateHighScore(50);
-        displayHighScore("Sara",highScorePosition);
+        displayHighScore("Sara",calculateHighScore(50));
 
     }
 }
