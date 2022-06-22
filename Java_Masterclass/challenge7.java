@@ -1,14 +1,20 @@
 import java.util.Scanner;
 public class challenge7 {
     public static double calFeetAndInchesToCentimeters(double feet,double inches){
-        double feetToInches = feet*12;
-        return (feetToInches + inches)*2.54;
+        if(feet >=0 && (inches >=0 && inches<=12)) {
+            double feetToInches = feet * 12;
+            return (feetToInches + inches) * 2.54;
+        }
+        return -1;
     }
 
     public static double calFeetAndInchesToCentimeters(double inches){
-        double feet = inches/12;
+        if(inches >=0) {
+            double feet = inches / 12;
 
-        return  calFeetAndInchesToCentimeters(feet , 0);
+            return calFeetAndInchesToCentimeters(feet, 0);
+        }
+        return -1;
     }
 
     public static void main(String[] args){
