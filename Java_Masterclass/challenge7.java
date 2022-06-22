@@ -24,7 +24,12 @@ public class challenge7 {
         System.out.println("Enter inches : ");
         double inches = cin.nextDouble();
 
-        double centimeters = calFeetAndInchesToCentimeters(inches);
-        System.out.println("Centimeters = " + centimeters);
+        double centimeters = calFeetAndInchesToCentimeters(feet,inches);
+        if(centimeters < 0.0){
+            System.out.println("\nInvalid Input.");
+        }else{
+            System.out.println("Centimeters = " + centimeters);
+
+        }
     }
 }
