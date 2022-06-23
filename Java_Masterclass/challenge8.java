@@ -1,6 +1,8 @@
 import java.util.Scanner;
 public class challenge8 {
+    
     private static final String MESSAGE = "Invalid Value";
+    
     public static String getDurationString(int minutes , int seconds){
         if(minutes >= 0 && (seconds >=0 && seconds <=59)){
             int hrs = minutes/60;
