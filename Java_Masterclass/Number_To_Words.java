@@ -70,6 +70,7 @@ public class Number_To_Words {
         Scanner cin = new Scanner(System.in);
         System.out.println("Enter a number : ");
         int number = cin.nextInt();
+        cin.close();
         numberToWords(number);
     }
 }
