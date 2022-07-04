@@ -1,26 +1,14 @@
-package challenge21;
-// part of challenge 21 (Fan, Lights , Room , Wall)
+package Composition;
+// Part of the Composition Problem (Bedroom , Bed , Ceiling, Lamp, Wall)
 public class Wall {
-    private int length;
-    private int breadth;
+    private String direction;
 
-    public Wall(int length,int breadth){
-
-        this.length = length;
-        this.breadth = breadth;
+    public Wall(String direction){
+        this.direction = direction;
     }
 
-    public int getWallArea(){
-        return length*breadth;
-    }
-
-
-    public int getLength(){
-        return length;
-    }
-
-    public int getBreadth(){
-        return breadth;
+    public String getDirection(){
+        return direction;
     }
 
 }
