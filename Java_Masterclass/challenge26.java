@@ -1,8 +1,8 @@
 
-import java.util.Scanner;
+import java.util.*;
 
 public class challenge26 {
-    public static Scanner cin = new Scanner(System.in);
+    private static Scanner cin = new Scanner(System.in);
 
     public static void main(String[] args){
 
@@ -17,19 +17,13 @@ public class challenge26 {
             myArray[i] = cin.nextInt();
         }
 
-        System.out.println("Original Elements : ");
+        System.out.println("Original array : " + Arrays.toString(myArray));
 
-        for(int i=0;i< myArray.length; i++){
-            System.out.println(myArray[i]);
-        }
 
         reverse(myArray);
 
-        System.out.println("Reversed Elements : ");
-
-        for(int i=0;i< myArray.length; i++){
-            System.out.println(myArray[i]);
-        }
+        System.out.println("Reversed array : " + Arrays.toString(myArray));
+        
 
     }
 
