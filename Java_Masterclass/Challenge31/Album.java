@@ -1,53 +1,37 @@
 
-// This code is used to demonstrate the use of inner class
+// This code is for demonstrating the Inner classes.
 import java.util.ArrayList;
 
 public class Album {
 
     private String albumName;
-    private AlbumBook album;
+    private SongList albumBook;
 
     public Album(String albumName){
 
         this.albumName = albumName;
-        this.album = new AlbumBook();
+        albumBook = new SongList();
     }
 
-    private class AlbumBook{
-        private ArrayList<Song> album;
 
-        private AlbumBook(){
-            album = new ArrayList<>();
+    private class SongList{
+        private ArrayList<Song> albumBook;
+
+        public SongList(){
+
+            this.albumBook = new ArrayList<>();
         }
 
-        private void getAlbumInfo(){
+        public Song getSong(String songName){
 
-            System.out.println("\nAlbum Name : " + Album.this.albumName);
-
-            if(album.isEmpty()){
-                System.out.println("\nNo Songs in the album.");
-            }else{
-
-                System.out.println("\nSongs : ");
-                for(int i=0;i<album.size(); i++){
-
-                    Song song = album.get(i);
-                    System.out.println((i+1) + ". Name - " + song.getSongName());
-                    System.out.println("   Duration : " + song.getSongDuration());
-                }
-            }
-        }
-
-        private Song getSong(String songName){
-
-            if(album.isEmpty()){
+            if(albumBook.isEmpty()){
                 System.out.println("The Album is empty");
                 return null;
             }else{
 
-                for(int i=0 ; i< album.size(); i++){
-                    if(album.get(i).getSongName().toLowerCase().compareTo(songName.toLowerCase()) == 0){
-                        return album.get(i);
+                for(int i = 0; i< albumBook.size(); i++){
+                    if(albumBook.get(i).getSongName().toLowerCase().compareTo(songName.toLowerCase()) == 0){
+                        return albumBook.get(i);
                     }
                 }
 
@@ -56,42 +40,65 @@ public class Album {
             }
         }
 
-        private void addSong(Song song){
-            album.add(song);
+        public void getAlbumInfo(){
+
+            System.out.println("\nAlbum Name : " + Album.this.albumName);
+
+            if(this.albumBook.isEmpty()){
+                System.out.println("\nNo Songs in the album.");
+            }else{
+
+                System.out.println("\nSongs : ");
+                for(int i = 0; i< this.albumBook.size(); i++){
+
+                    Song song = this.albumBook.get(i);
+                    System.out.println((i+1) + ". Name - " + song.getSongName());
+                    System.out.println("   Duration : " + song.getSongDuration());
+                }
+            }
         }
 
-        private void addSong(String songName, String songDuration){
+        public void addSong(Song song){
+            albumBook.add(song);
+        }
+        public void addSong(String songName, String songDuration){
 
-            this.album.add(new Song(songName, songDuration));
+            this.albumBook.add(new Song(songName, songDuration));
         }
 
-        private ArrayList<Song> getAlbum() {
-            return album;
+        public ArrayList<Song> getAlbumBook() {
+            return albumBook;
         }
 
-    }
-
-    public void getAlbumInfo(){
-        album.getAlbumInfo();
     }
 
 
     public Song getSong(String songName){
-        return this.album.getSong(songName);
+        return this.albumBook.getSong(songName);
+    }
+
+    public void getAlbumInfo(){
+
+        albumBook.getAlbumInfo();
     }
 
     public void addSong(Song song){
-        this.album.addSong(song);
+
+        albumBook.addSong(song);
+    }
+
+    public ArrayList<Song> getAlbumBook(){
+
+        return  albumBook.getAlbumBook();
     }
 
     public void addSong(String songName, String songDuration){
-        this.album.addSong(songName , songDuration);
-    }
-
-    public ArrayList<Song> getAlbum(){
-        return this.album.getAlbum();
+        albumBook.addSong(songName , songDuration);
 
     }
+
+
+
     public String getAlbumName() {
         return albumName;
     }
