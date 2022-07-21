@@ -1,5 +1,4 @@
-
-// This code is used to demonstrate the use of inner class
+// This code is for demonstrating the Inner classes.
 import java.util.*;
 
 public class Playlist {
@@ -127,16 +126,16 @@ public class Playlist {
         }
     }
 
-    private static void addSong(Album album2){
+    private static void addSong(Album album){
 
-        album2.getAlbumInfo();
+        album.getAlbumInfo();
 
         while(true){
 
             System.out.println("\nEnter a song : ");
             String song = cin.nextLine();
 
-            Song music = album2.getSong(song);
+            Song music = album.getSong(song);
 
             if(music != null) {
                 playlist.add(music);
