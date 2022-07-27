@@ -22,6 +22,7 @@ public class MyLinkedList implements NodeList{
         }
 
         ListItem currentItem = this.getRoot();
+        
         while(currentItem != null){
             int comparison = currentItem.compareTo(item);
             if(comparison < 0){
