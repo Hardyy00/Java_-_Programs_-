@@ -22,26 +22,32 @@ public class MyLinkedList implements NodeList{
         }
 
         ListItem currentItem = this.getRoot();
-        
+
         while(currentItem != null){
+
             int comparison = currentItem.compareTo(item);
             if(comparison < 0){
                 // Current item is less than adding item, so adding item will move int right
 
                 if(currentItem.nextItem() == null){
-                    currentItem.setRightItem(item);
+                    currentItem.setRightItem(item).setLeftItem(currentItem);
                     return true;
+
                 } else{
                     currentItem = currentItem.nextItem();
                 }
+
             } else if(comparison > 0){
 
                 if(currentItem.previousItem() == null){
+
                     currentItem.setLeftItem(item).setRightItem(currentItem);
                     this.root = item;
+
                 }else {
                     currentItem.previousItem().setRightItem(item).setLeftItem(currentItem.previousItem());
                     item.setRightItem(currentItem).setLeftItem(item);
+
                 }
                 return true;
 
@@ -57,22 +63,56 @@ public class MyLinkedList implements NodeList{
 
     @Override
     public boolean remove(ListItem item) {
-        return false;
+
+        if(this.root == null){
+            System.out.println("\nThis List is Empty");
+            return false;
+        }
+
+        ListItem currentItem = this.root;
+
+        while(currentItem != null) {
+            int comparison = currentItem.compareTo(item);
+
+            if (comparison == 0) {
+
+                if(currentItem == this.root){
+                    this.root = currentItem.nextItem();
+                }else{
+
+                    currentItem.previousItem().setRightItem(currentItem.nextItem());
+
+                    if(currentItem.nextItem() != null){
+                        currentItem.nextItem().setLeftItem(currentItem.previousItem());
+                    }
+                }
+                return true;
+            } else if (comparison < 0) {
+                currentItem = currentItem.nextItem();
+            } else {
+                return false;
+            }
+        }
+            return false;
+
     }
 
     @Override
     public void traverse() {
+
         if(this.root == null){
-            System.out.println("List is Empty");
+            System.out.println("\nCANNOT TRAVERSE . List is Empty");
 
         }else {
 
             ListItem currentItem = this.root;
+
             while (currentItem != null) {
                 System.out.println(currentItem.getValue());
                 currentItem = currentItem.nextItem();
             }
         }
-
     }
 }
+
+
