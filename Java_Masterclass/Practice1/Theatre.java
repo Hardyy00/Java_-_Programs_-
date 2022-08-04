@@ -29,6 +29,7 @@ public class Theatre {
     }
 
     private class Seat implements Comparable<Seat>{
+        
         private final String seatNumber;
         private boolean isBooked = false;
 
