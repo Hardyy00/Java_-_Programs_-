@@ -1,6 +1,7 @@
 package practice.com.hardik;
 
 // This code has my own Implementation of Binary Search.
+
 import java.util.*;
 
 public class Theatre {
