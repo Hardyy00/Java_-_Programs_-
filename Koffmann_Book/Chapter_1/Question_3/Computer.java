@@ -2,7 +2,6 @@ package question3.com.hardik;
 
 import org.w3c.dom.ls.LSOutput;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public abstract class Computer {
@@ -18,8 +17,6 @@ public abstract class Computer {
     static double EXTERNAL_MEMORY_CD = 20.11;
     static double EXTERNAL_MEMORY_DVD = 31.14;
     static double EXTERNAL_MEMORY_DVD_AND_CD = EXTERNAL_MEMORY_CD+ EXTERNAL_MEMORY_DVD;
-//    static double SCREENSIZE_8INCH = 109.00;
-//    static double SCREENSIZE_9INCH = 120.00;
     static double ADDITIONAL_MODEM = 12.12;
     static double ADDITIONAL_NETWORK_CARD = 9.76;
     static double ADDITIONAL_WIRELESS_NETWORK = 15.67;
