@@ -86,10 +86,4 @@ public final class StockItem implements Comparable<StockItem>{
     }
 
 
-
-
-
-
-
-
 }
