@@ -56,7 +56,7 @@ public class StockList {
 
         double totalPrice = 0.0d;
 
-        String s =  "Stock Name : " + this.stockName + "\n";
+        String s =  "\nStock Name : " + this.stockName + "\n";
         for(Map.Entry<String  , StockItem> item : list.entrySet()){
 
             StockItem currentItem = item.getValue();
