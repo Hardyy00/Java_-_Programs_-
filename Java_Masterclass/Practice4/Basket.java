@@ -29,7 +29,7 @@ public class Basket {
     @Override
     public String toString(){
 
-        String s= "Your Basket '" + this.name  + "' contains " + list.size() + " Items\n";
+        String s= "\nYour Basket '" + this.name  + "' contains " + list.size() + " Items\n";
 
         double totalBasketPrice = 0.0d;
 
